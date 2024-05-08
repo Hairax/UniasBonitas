@@ -4,61 +4,53 @@ import Logo from '../../assets/Logo.png'
 
 function Header () {
   const imgStyles =
-    'w-[75px] mr-10'
+    'w-[75px] mr-10 mt-4'
   const buttonStyles =
-    'hover:bg-[#DFDFDF] rounded-xl px-3'
+    'hover:bg-gray-700 text-white py-2 px-4 rounded-lg'
   const navbarStyles =
-    'text-2xl flex p-3 px-5 bg-[#f0f0f0] rounded-full w-full gap-x-10 justify-center'
-  const onClickMaterials = () => {
-    window.location.assign('http://localhost:5173/material-menu')
-  }
+    'text-2xl flex p-3 px-5 rounded-full w-full gap-x-10 bg-gradient-to-br from-black to-gray-800 justify-end'
+
   const onClickLogout = () => {
     window.location.assign('http://localhost:5173/')
   }
-  const onClick = () => {}
 
-  const onClickMaterialExtraido = () => {
-    window.location.assign('http://localhost:5173/extracted-materials')
+  const onClickCitas = () => {
+    window.location.assign('http://localhost:5173/CitasPage')
+  }
+
+  const onClickReservas = () => {
+  //  window.location.assign('http://localhost:5173/ReservasPage')
   }
 
   return (
-    <header className='flex w-full mt-6 px-14'>
+    <header className='flex w-full px-14 bg-gradient-to-br from-black to-gray-800'>
       <Image
         src={Logo}
-        alt='Cooperativa minera san pablo'
+        alt='Mari Uñas Bonitas Logo'
         className={imgStyles}
       />
       <nav className={navbarStyles}>
-        <Button
-          text='Materiales'
+        <button
           type='button'
           className={buttonStyles}
-          onClick={onClickMaterials}
-        />
-        <Button
-          text='Ventas'
+          onClick={onClickCitas}
+        >
+          Citas
+        </button>
+        <button
           type='button'
           className={buttonStyles}
-          onClick={onClick}
-        />
-        <Button
-          text='Inventario'
-          type='button'
-          className={buttonStyles}
-          onClick={onClick}
-        />
-        <Button
-          text='Material Extraido'
-          type='button'
-          className={buttonStyles}
-          onClick={onClickMaterialExtraido}
-        />
-        <Button
-          text='Salir'
+          onClick={onClickReservas}
+        >
+          Reservas
+        </button>
+        <button
           type='button'
           className={buttonStyles}
           onClick={onClickLogout}
-        />
+        >
+          Salir
+        </button>
       </nav>
     </header>
   )

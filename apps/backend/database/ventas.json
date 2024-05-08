@@ -1,0 +1,30 @@
+[
+  {
+    "idVenta": 1,
+    "name": "John",
+    "date": "2019-01-01",
+    "products": [
+      {
+        "idProduct": 1,
+        "quantity": 2
+      },
+      {
+        "idProduct": 2,
+        "quantity": 1
+      }
+    ],
+    "totalPrice": 1000
+  },
+  {
+    "idVenta": 2,
+    "name": "Johnsss",
+    "date": "2019-01-01",
+    "products": [
+      {
+        "idProduct": 1,
+        "quantity": 2
+      }
+    ],
+    "totalPrice": 1000
+  }
+]

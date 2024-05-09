@@ -5,14 +5,16 @@ function LoginPage () {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 
+  const buttonStyles = 'bg-red-500 text-white py-2 px-4 rounded-lg w-full'
+
   const handleLogin = () => {
-    // Verificar las credenciales del usuario
-    if (username === 'MaryUñas' && password === 'Bonitas') {
-      window.location.assign('http://localhost:5173/CitasPage')
+    if (username === 'Usuario' && password === 'Contraseña') {
+      window.location.href = '/CitasPage'
     } else {
       alert('¡Usuario o contraseña incorrectos!')
     }
   }
+
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword)
   }
@@ -50,12 +52,13 @@ function LoginPage () {
             >
               {showPassword ? 'Ocultar Contraseña' : 'Mostrar Contraseña'}
             </button>
-          <button type="submit"
-            className="bg-red-500 text-white py-2 px-4 rounded-lg w-full"
-            onClick={handleLogin}
-          >
-            Login
-          </button>
+          <button
+          type='button'
+          className={buttonStyles}
+          onClick={handleLogin}
+        >
+          Login
+        </button>
         </form>
       </div>
     </div>

@@ -1,8 +1,24 @@
 import Header from '../layout/Header'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import ListaCitas from '../layout/ListaCitas'
+import { getCitas, postCita } from '../../utils/Connections'
 
 function CitasPage () {
   const [popupOpen, setPopupOpen] = useState(false)
+  const [, setCitas] = useState([])
+
+  const getCitasList = async () => {
+    setCitas(await getCitas())
+  }
+
+  useEffect(() => async () => {
+    const fetchData = async () => {
+      await getCitasList()
+    }
+    const interval = setInterval(fetchData, 1000)
+    return () => clearInterval(interval)
+  }
+  , [])
 
   const handlePopupOpen = () => {
     setPopupOpen(true)
@@ -12,15 +28,28 @@ function CitasPage () {
     setPopupOpen(false)
   }
 
+  const [name, setName] = useState('')
+  const [date, setDate] = useState('')
+  const [time, setTime] = useState('')
+  const handlePostCitas = async () => {
+    await postCita({
+      name,
+      date,
+      time
+    })
+  }
+
   return (
     <div className="h-screen overflow-scroll bg-gradient-to-br from-pink-500 to-purple-700">
       <div >
         <Header />
       </div>
-      <div className="flex justify-center items-center bg-gradient-to-br from-black to-gray-900 w-[80%] h-[80%] rounded-lg shadow-lg m-auto mt-10 w-{80%} flex-col">
-          <div className="flex flex-col items-center">
+      <div className="flex items-center bg-gradient-to-br from-black to-gray-900 w-[80%] h-[80%] rounded-lg shadow-lg m-auto mt-10 w-{80%} flex-col">
+          <div className="flex flex-col items-center mt-8">
             <h1 className="text-3xl font-bold mb-2 text-center text-white font-serif">Citas</h1>
-            <h2 className="text-lg font-semibold mb-8 text-center text-white font-serif">Elige la fecha y hora de tu cita</h2>
+          </div>
+          <div className="flex flex-col items-center">
+            <ListaCitas />
           </div>
           <div className="flex flex-col items-center">
             <button
@@ -50,6 +79,8 @@ function CitasPage () {
                         type="text"
                         placeholder="Nombre"
                         className="placeholder-gray-500 login-page__input w-full border-b-2 border-gray-300 py-2 px-4 rounded-lg focus:outline-none focus:border-purple-500"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
                       />
                     </div>
                     <div className="mb-4 w-full">
@@ -57,6 +88,8 @@ function CitasPage () {
                         type = "date"
                         placeholder="Fecha"
                         className="placeholder-gray-500 login-page__input w-full border-b-2 border-gray-300 py-2 px-4 rounded-lg focus:outline-none focus:border-purple-500"
+                        value={date}
+                        onChange={(e) => setDate(e.target.value)}
                       />
                     </div>
                     <div className="mb-4 w-full">
@@ -64,12 +97,14 @@ function CitasPage () {
                         type="time"
                         placeholder="Hora"
                         className="placeholder-gray-500 login-page__input w-full border-b-2 border-gray-300 py-2 px-4 rounded-lg focus:outline-none focus:border-purple-500"
+                        value={time}
+                        onChange={(e) => setTime(e.target.value)}
                       />
                     </div>
                     <button
                       type="submit"
                       className="bg-red-500 text-white py-2 px-4 rounded-lg w-full"
-                      onClick={handlePopupClose}
+                      onClick={() => handlePostCitas()}
                     >
                       Guardar
                     </button>

@@ -1,4 +1,3 @@
-import Button from '../common/Button'
 import Image from '../common/Image'
 import Logo from '../../assets/Logo.png'
 

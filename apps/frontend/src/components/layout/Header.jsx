@@ -18,7 +18,11 @@ function Header () {
   }
 
   const onClickReservas = () => {
-  //  window.location.assign('http://localhost:5173/ReservasPage')
+    window.location.assign('http://localhost:5173/ReservasPage')
+  }
+
+  const onClickReportes = () => {
+    window.location.assign('http://localhost:5173/Reports')
   }
 
   return (
@@ -42,6 +46,13 @@ function Header () {
           onClick={onClickReservas}
         >
           Reservas
+        </button>
+        <button
+          type='button'
+          className={buttonStyles}
+          onClick={onClickReportes}
+        >
+          Reporte
         </button>
         <button
           type='button'

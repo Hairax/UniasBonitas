@@ -1,9 +1,9 @@
 import Header from '../layout/Header'
 import { useState, useEffect } from 'react'
-import ListaCitas from '../layout/ListaCitas'
 import { getCitas, postCita } from '../../utils/Connections'
+import ListaReserva from '../layout/ListaReserva'
 
-function CitasPage () {
+function ReservasPage () {
   const [popupOpen, setPopupOpen] = useState(false)
   const [, setCitas] = useState([])
 
@@ -55,7 +55,7 @@ function CitasPage () {
             <h1 className="text-3xl font-bold mb-2 text-center text-white font-serif">Citas</h1>
           </div>
           <div className="flex flex-col items-center">
-            <ListaCitas />
+            <ListaReserva />
           </div>
           <div className="flex flex-col items-center">
             <button
@@ -153,4 +153,4 @@ function CitasPage () {
   )
 }
 
-export default CitasPage
+export default ReservasPage

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { getCitas, putCita, deleteCita } from '../../utils/Connections'
 
-function ListaCitas () {
+function ListaReports () {
   const [citas, setCitas] = useState([])
   const [popupOpen, setPopupOpen] = useState(false)
   const [name, setName] = useState('')
@@ -88,7 +88,6 @@ function ListaCitas () {
                     const dateB = new Date(`${b.date}T${b.time}`)
                     return dateA - dateB
                   })
-                  .filter(cita => cita.state === 'Pagado')
                   .map((cita, i) => (
                     <div key={i} className="grid grid-cols-8 gap-4 w-full p-5 justify-items-center">
                         <div className="text-center text-white">{cita.name}</div>
@@ -189,4 +188,4 @@ function ListaCitas () {
   )
 }
 
-export default ListaCitas
+export default ListaReports

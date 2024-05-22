@@ -3,30 +3,45 @@
     "id": "2",
     "name": "Lucia",
     "date": "2020-01-01",
-    "time": "12:00"
+    "time": "12:00",
+    "details": "Pintado y decorado de unias",
+    "state": "Reserva",
+    "cost": 100
   },
   {
     "id": "3",
     "name": "Lenny",
     "date": "2024-06-12",
-    "time": "14:00"
+    "time": "14:00",
+    "details": "Pintado de unias",
+    "state": "Cancelado",
+    "cost": 50
   },
   {
     "id": "4",
     "name": "Lucia",
     "date": "2020-01-01",
-    "time": "12:00"
+    "time": "17:00",
+    "details": "Pintado y decorado de unias",
+    "state": "Pagado",
+    "cost": 100
   },
   {
-    "id": "5",
-    "name": "Lucia",
-    "date": "2020-01-01",
-    "time": "12:00"
+    "name": "Juana",
+    "date": "2019-01-22",
+    "time": "02:12",
+    "details": "Pintado y Manicura",
+    "state": "Pagado",
+    "cost": "75",
+    "id": "0b0b9414-0cd3-454e-82fd-7e0489d3ed68"
   },
   {
-    "id": "6",
-    "name": "Lucia",
+    "name": "Juana",
     "date": "2020-01-01",
-    "time": "12:00"
+    "time": "16:12",
+    "details": "Pintado",
+    "state": "Pagado",
+    "cost": "55",
+    "id": "64b20760-f88e-42e5-898b-6af0c9986ab5"
   }
 ]

@@ -34,7 +34,7 @@ function Reports () {
           <div className="flex flex-col items-center">
             <div className="border-b-2 border-white w-[90%]"></div>
             <div className="text-center text-white font-bold"> Total de Citas: {citas.length} </div>
-            <div className="text-center text-white font-bold"> Total de Citas Pagadas: {citas.filter(cita => cita.state === 'Pagado').length} -- {citas.filter(cita => cita.state === 'Pagado').reduce((acc, cita) => acc + parseFloat(cita.cost), 0)} </div>
+            <div className="text-center text-white font-bold"> Total de Citas Pagadas: {citas.filter(cita => cita.state === 'Pagado').length} -- Ingreso:   {citas.filter(cita => cita.state === 'Pagado').reduce((acc, cita) => acc + parseFloat(cita.cost), 0)}Bs </div>
             <div className="text-center text-white font-bold"> Total de Citas Reservadas: {citas.filter(cita => cita.state === 'Reserva').length} </div>
             <div className="text-center text-white font-bold"> Total de Citas Canceladas: {citas.filter(cita => cita.state === 'Cancelado').length} </div>
             </div>

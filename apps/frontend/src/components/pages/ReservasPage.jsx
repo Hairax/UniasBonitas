@@ -52,7 +52,7 @@ function ReservasPage () {
       </div>
       <div className="flex items-center bg-gradient-to-br from-black to-gray-900 w-[80%] h-[80%] rounded-lg shadow-lg m-auto mt-10 w-{80%} flex-col">
           <div className="flex flex-col items-center mt-8">
-            <h1 className="text-3xl font-bold mb-2 text-center text-white font-serif">Citas</h1>
+            <h1 className="text-3xl font-bold mb-2 text-center text-white font-serif">Reservas</h1>
           </div>
           <div className="flex flex-col items-center">
             <ListaReserva />

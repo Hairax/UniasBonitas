@@ -1,0 +1,16 @@
+[
+  {
+    "id": "21739dd7-ba5f-4443-83cf-95d31b9f9323",
+    "description": "asd",
+    "date": "2025-04-23T19:50:26.667Z",
+    "saldo": "1000",
+    "tipo": "Ingreso"
+  },
+  {
+    "saldo": "150",
+    "description": "asdasd",
+    "tipo": "Egreso",
+    "date": "2025-04-23T21:15:59.128Z",
+    "id": "c9f35aab-732f-4ead-8aab-cce4d1386a2c"
+  }
+]
